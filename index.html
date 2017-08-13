@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<style>
+
+input, th, td, pre {
+	font-size : 20px;
+}
+
+
+input[type=button] {
+	padding : 10px;
+	padding-left : 40px;
+	padding-right : 40px;
+}
+
+input[type=text] {
+	width : 200px;
+	border : 1px solid black;
+	padding : 2px;
+}
+
+input[type=number] {
+	width : 80px;
+	border : 1px solid black;
+	padding : 2px;
+}
+input.correct {
+	background-color : #8F8;
+}
+input.fault {
+	background-color : #F88;
+}
+input.almost {
+	background-color : #FB8;
+}
+
+table.section {
+	display:inline-block;
+	margin-right : 50px;
+}
+div.content {
+	text-align : center;
+	vertical-align : top;
+}
+
+div.talk {
+	border : 1px solid #888;
+	display : inline-block;
+	padding : 5px;
+	margin : 5px;
+	cursor : pointer;
+	background : linear-gradient(#EEE,#CCC);
+	user-select:none;
+	border-radius : 2px;
+}
+
+div.talk:active {
+	background : linear-gradient(#CCC,#EEE);
+}
+
+div.talk:hover {
+	border-color : black;
+}
+
+.hide {
+	opacity:0;
+	cursor:default;
+	pointer-events: none;
+}
+
+.reveal .hide {
+	opacity : 1;
+	color : #AAA;
+	cursor:pointer;
+	pointer-events: auto;
+}
+
+</style>
+<script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="benkyou.js"></script>
+</body>
+</html>

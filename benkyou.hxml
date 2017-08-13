@@ -1,0 +1,4 @@
+-js benkyou.js
+-main Benkyou
+-lib heaps
+-resource words.txt
