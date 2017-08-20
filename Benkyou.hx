@@ -41,7 +41,7 @@ class Benkyou {
 
 		write('<div class="content">');
 
-		var K = 3;
+		var K = 5;
 
 		title('Additions');
 		for( i in 0...K ) {
@@ -59,7 +59,7 @@ class Benkyou {
 		}
 		end();
 
-		var K = 5;
+		var K = 7;
 
 		title('Dictée');
 		var wlist = [for( w in words.keys() ) { var s = words.get(w); { w : w, p : 1 / (4 + s.gen), s : s } }];
