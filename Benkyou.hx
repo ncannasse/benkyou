@@ -41,7 +41,7 @@ class Benkyou {
 
 		write('<div class="content">');
 
-		var K = 5;
+		var K = 4;
 
 		title('Additions');
 		for( i in 0...K ) {
@@ -59,7 +59,7 @@ class Benkyou {
 		}
 		end();
 
-		var K = 7;
+		var K = 6;
 
 		title('Dictée');
 		var wlist = [for( w in words.keys() ) { var s = words.get(w); { w : w, p : 1 / (4 + s.gen), s : s } }];
@@ -176,7 +176,7 @@ class Benkyou {
 		write('
 		<tr>
 			<td><div class="talk" word="$word" onclick="responsiveVoice.speak(this.getAttribute(\'word\'),\'French Female\',{rate:0.8})">&#x25BA;</div></td>
-			<td><input type="text" answer="$word"/> <span class="hide" title="$word">[?]</span></td>
+			<td><input type="text" spellcheck="false" answer="$word"/> <span class="hide" title="$word">[?]</span></td>
 		</tr>
 		');
 	}

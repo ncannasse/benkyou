@@ -72,7 +72,7 @@ regarder
 petite
 il arrive
 elle regarde
-il remue
+remuer
 un rat
 le riz
 
