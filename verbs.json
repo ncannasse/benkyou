@@ -1,0 +1,32 @@
+[
+	{
+		"verb" : "être",
+		"temps" : "au présent",
+		"list" : ["suis","es","est","sommes","êtes","sont"]
+	},
+	{
+		"verb" : "être",
+		"temps" : "à l'imparfait",
+		"list" : ["étais","étais","était","étions","étiez","étaient"]
+	},
+	{
+		"verb" : "avoir",
+		"temps" : "au présent",
+		"list" : ["ai","as","a","avons","avez","ont"]
+	},
+	{
+		"_verb" : "avoir",
+		"temps" : "à l'imparfait",
+		"list" : ["avais","avais","avait","avions","aviez","avaient"]
+	},
+	{
+		"_verb" : "être",
+		"temps" : "au futur",
+		"list" : ["serai","seras","sera","serons","serez","seront"]
+	},
+	{
+		"_verb" : "avoir",
+		"temps" : "au futur",
+		"list" : ["aurai","auras","aura","aurons","aurez","auront"]
+	}
+]

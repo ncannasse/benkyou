@@ -10,9 +10,16 @@ class Benkyou {
 
 	var output : String;
 	var words : Map<String, WordStat>;
+	var verbs : Array<{
+		verb : String,
+		temps : String,
+		list : Array<String>,
+	}>;
 
 	function new() {
 		words = getWords();
+		verbs = getVerbs();
+		verbs = [for( v in verbs ) if( v.verb != null ) v];
 	}
 
 	function getWords() {
@@ -36,39 +43,101 @@ class Benkyou {
 		return m;
 	}
 
+	function getVerbs() {
+		return haxe.Json.parse(haxe.Resource.getString("verbs.json"));
+	}
+
 	function print() {
 		output = "";
 
 		write('<div class="content">');
 
-		var K = 4;
+		// NAMI
 
-		title('Additions');
-		for( i in 0...K ) {
-			var a = random(10,80);
-			var b = random(10,99 - a);
-			inputNumber('$a + $b =', a + b);
+		var nami = js.Browser.document.URL.indexOf("nami") > 0;
+		var WORDS, TENSE = 0;
+
+		if( nami ) {
+
+			WORDS = 6;
+
+			var K = 4;
+			title('Additions');
+			for( i in 0...K ) {
+				var a = random(1,20);
+				var b = random(1,30);
+				inputNumber('$a + $b =', a + b);
+			}
+			end();
+
+		} else {
+
+			// MIO
+
+			var K = 2;
+/*
+			title('Additions');
+			for( i in 0...K ) {
+				var a = random(10,80);
+				var b = random(10,99 - a);
+				inputNumber('$a + $b =', a + b);
+			}
+			end();
+
+			title('Soustractions');
+			for( i in 0...K ) {
+				var a = random(10,40);
+				var b = random(2,9);
+				inputNumber('$a - $b =', a - b);
+			}
+			end();
+*/
+			var MULT = 8;
+
+			title('Multiplications');
+			for( i in 0...MULT ) {
+				var a = random(2,5);
+				var b = random(2,9);
+				if( Std.random(2) == 0 ) {
+					var tmp = a;
+					a = b;
+					b = tmp;
+				}
+				inputNumber('$a x $b =', a * b);
+			}
+			end();
+
+			WORDS = 0;
+			TENSE = 6;
+
 		}
-		end();
 
-		title('Soustractions');
-		for( i in 0...K ) {
-			var a = random(10,40);
-			var b = random(2,9);
-			inputNumber('$a - $b =', a - b);
+		if( WORDS > 0 ) {
+			title('Dictée');
+			var wlist = [for( w in words.keys() ) { var s = words.get(w); { w : w, p : 1 / (4 + s.gen), s : s } }];
+			for( i in 0...WORDS ) {
+				var w = randomList(wlist);
+				w.s.gen++;
+				inputWord(w.w);
+			}
+			end();
 		}
-		end();
 
-		var K = 6;
-
-		title('Dictée');
-		var wlist = [for( w in words.keys() ) { var s = words.get(w); { w : w, p : 1 / (4 + s.gen), s : s } }];
-		for( i in 0...K ) {
-			var w = randomList(wlist);
-			w.s.gen++;
-			inputWord(w.w);
+		if( TENSE > 0 ) {
+			title("Temps");
+			var pre = [["je"],["tu"],["il","elle"],["nous"],["vous"],["ils","elles"]];
+			for( i in 0...TENSE ) {
+				var v = verbs[Std.random(verbs.length)];
+				var k = Std.random(pre.length);
+				var pre = pre[k];
+				var pre = pre[Std.random(pre.length)];
+				var ans = v.list[k];
+				if( pre == "je" && "aeiouéà".indexOf(ans.charAt(0)) >= 0 )
+					pre = "j'";
+				write('<tr><td colspan="2"><i>${v.verb} ${v.temps}</i></td></tr><tr><td>$pre</td><td><input type="text" answer="$ans"/> <span class="hide" title="$ans">[?]</span></td></tr>');
+			}
+			end();
 		}
-		end();
 
 		write("<br/><br/><br/><input type='button' id='check' value='Corriger'/>");
 
