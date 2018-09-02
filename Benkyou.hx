@@ -163,7 +163,10 @@ class Benkyou {
 			}
 		}
 		for( e in J("input[type=text]").elements() ) {
-			var v = StringTools.trim(e.val()).toLowerCase();
+			var v = StringTools.trim(e.val());
+			v = ~/[ \t\n]+/g.replace(v," ");
+			e.val(v);
+			v = v.toLowerCase();
 			if( v == "" ) {
 				allOK = false;
 				continue;
