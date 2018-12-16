@@ -10,23 +10,78 @@
 		"list" : ["étais","étais","était","étions","étiez","étaient"]
 	},
 	{
+		"verb" : "être",
+		"temps" : "au futur",
+		"list" : ["serai","seras","sera","serons","serez","seront"]
+	},
+	{
 		"verb" : "avoir",
 		"temps" : "au présent",
 		"list" : ["ai","as","a","avons","avez","ont"]
 	},
 	{
-		"_verb" : "avoir",
+		"verb" : "avoir",
 		"temps" : "à l'imparfait",
 		"list" : ["avais","avais","avait","avions","aviez","avaient"]
 	},
 	{
-		"_verb" : "être",
-		"temps" : "au futur",
-		"list" : ["serai","seras","sera","serons","serez","seront"]
-	},
-	{
-		"_verb" : "avoir",
+		"verb" : "avoir",
 		"temps" : "au futur",
 		"list" : ["aurai","auras","aura","aurons","aurez","auront"]
+	},
+	{
+		"verb" : "aller",
+		"temps" : "au présent",
+		"list" : ["vais","vas","va","allons","allez","vont"]
+	},
+	{
+		"verb" : "aller",
+		"temps" : "à l'imparfait",
+		"list" : ["allais","allais","allait","allions","alliez","allaient"]
+	},
+	{
+		"verb" : "aller",
+		"temps" : "au futur",
+		"list" : ["irai","iras","ira","irons","irez","iront"]
+	},
+	{
+		"verb" : "faire",
+		"temps" : "au présent",
+		"list" : ["fais","fais","fait","faisons","faites","font"]
+	},
+	{
+		"verb" : "faire",
+		"temps" : "à l'imparfait",
+		"list" : ["faisais","faisais","faisait","faisiez","faisiez","faisaient"]
+	},
+	{
+		"verb" : "faire",
+		"temps" : "au futur",
+		"list" : ["ferai","feras","fera","ferons","ferez","feront"]
+	},
+	{
+		"verb" : "chanter",
+		"temps" : "au présent",
+		"list" : ["chante","chantes","chante","chantons","chantez","chantent"]
+	},
+	{
+		"verb" : "chanter",
+		"temps" : "à l'imparfait",
+		"list" : ["chantais","chantais","chantait","chantions","chantiez","chantent"]
+	},
+	{
+		"verb" : "chanter",
+		"temps" : "au futur",
+		"list" : ["chanterai","chanteras","chantera","chanterons","chanterez","chanteront"]
+	},
+	{
+		"_verb" : "lire"
+	},
+	{
+		"_verb" : "vouloir"
+	},
+	{
+		"_verb" : "pouvoir"
 	}
+	
 ]

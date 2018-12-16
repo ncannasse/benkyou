@@ -1,5 +1,6 @@
 -js benkyou.js
 -main Benkyou
 -lib heaps
+-lib hx3compat
 -resource words.txt
 -resource verbs.json

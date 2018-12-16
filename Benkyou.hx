@@ -108,7 +108,7 @@ class Benkyou {
 			end();
 
 			WORDS = 0;
-			TENSE = 6;
+			TENSE = 9;
 
 		}
 
@@ -134,7 +134,7 @@ class Benkyou {
 				var ans = v.list[k];
 				if( pre == "je" && "aeiouéà".indexOf(ans.charAt(0)) >= 0 )
 					pre = "j'";
-				write('<tr><td colspan="2"><i>${v.verb} ${v.temps}</i></td></tr><tr><td>$pre</td><td><input type="text" answer="$ans"/> <span class="hide" title="$ans">[?]</span></td></tr>');
+				write('<tr><td colspan="2"><i>${v.verb} ${v.temps}</i></td></tr><tr><td>$pre</td><td><input spellcheck="false" type="text" answer="$ans"/> <span class="hide" title="$ans">[?]</span></td></tr>');
 			}
 			end();
 		}
